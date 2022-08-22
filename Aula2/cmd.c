@@ -7,8 +7,9 @@ void perc(int state, int maxstate){
 	
 	if (state==0){
 		sprintf(ss,"\r|");
-	}else{
-		ss[strlen(ss)-9] = "\0";
+	}
+	else{
+		ss[strlen(ss)- 9] = "\0";
 	}
 	sprintf(ss,"%s*> %%03d %%%%",ss);
 	fprintf(stderr,ss, (int)(100.* (float)state/(float)maxstate));
@@ -16,15 +17,15 @@ void perc(int state, int maxstate){
 	if (state == maxstate){
 		fprintf(stderr,"\n");
 	}
-	return
+	return;
 }
 
 int main(int argc, char *argv[]){
-	int N = 100
+	int N = 100;
 	
 	for (int i = 0;i <= N;i ++){
 		usleep(8000);
-	perc(i,N)
+	perc(i,N);
 	
 	}
 	fprintf(stderr,"\n");
